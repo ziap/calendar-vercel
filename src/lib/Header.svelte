@@ -2,8 +2,8 @@
     /**@type {Date}*/
     export let date;
 
-    const nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1)
-    const lastMonth = new Date(date.getFullYear(), date.getMonth() - 1, 1)
+    $: nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1)
+    $: lastMonth = new Date(date.getFullYear(), date.getMonth() - 1, 1)
 </script>
 
 <header>
