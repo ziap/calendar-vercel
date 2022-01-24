@@ -1,0 +1,21 @@
+{
+  "name": "calendar",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-vercel": "^1.0.0-next.34",
+    "@sveltejs/kit": "^1.0.0-next.213",
+    "autoprefixer": "^10.4.0",
+    "postcss-normalize": "^10.0.1",
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.10.1"
+  },
+  "type": "module",
+  "dependencies": {
+    "lunar-calendar-ts-vi": "^1.0.2"
+  }
+}
