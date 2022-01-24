@@ -5,7 +5,6 @@ import adapter from "@sveltejs/adapter-vercel";
 const config = {
   kit: {
     adapter: adapter(),
-    hydrate: false,
     prerender: { enabled: false },
 
     // hydrate the <div id="svelte"> element in src/app.html
