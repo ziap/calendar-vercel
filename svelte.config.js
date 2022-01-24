@@ -6,7 +6,6 @@ const config = {
   kit: {
     adapter: adapter(),
     hydrate: false,
-    router: false,
     prerender: { enabled: false },
 
     // hydrate the <div id="svelte"> element in src/app.html
