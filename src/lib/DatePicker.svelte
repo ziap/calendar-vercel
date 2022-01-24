@@ -36,7 +36,7 @@
                 class:highlight={getHoliday(d)}
                 title={d.toLocaleString("vi-VN", { dateStyle: "full" })}
                 class:active={d.getDate() == date.getDate()}
-                href={`/${d.getMonth() + 1}-${d.getDate()}-${d.getFullYear()}`}
+                href={`/${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`}
             >
                 <div class="solar">{d.getDate()}</div>
                 <div class="lunar">

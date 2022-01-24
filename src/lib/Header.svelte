@@ -8,7 +8,7 @@
 
 <header>
     <section>
-        <a href={`/${lastMonth.getMonth() + 1}-${lastMonth.getDate()}-${lastMonth.getFullYear()}`} title="Tháng trước">
+        <a href={`/${lastMonth.getFullYear()}-${lastMonth.getMonth() + 1}-${lastMonth.getDate()}`} title="Tháng trước">
             <svg
                 aria-hidden="true"
                 focusable="false"
@@ -28,7 +28,7 @@
         <h3 class="year">{date.getFullYear()}</h3>
     </section>
     <section>
-        <a href={`/${nextMonth.getMonth() + 1}-${nextMonth.getDate()}-${nextMonth.getFullYear()}`} title="Tháng sau">
+        <a href={`/${nextMonth.getFullYear()}-${nextMonth.getMonth() + 1}-${nextMonth.getDate()}`} title="Tháng sau">
             <svg
                 aria-hidden="true"
                 focusable="false"

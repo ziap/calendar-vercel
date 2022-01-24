@@ -3,7 +3,7 @@
         const today = new Date()
         return {
             status: 302,
-            redirect: `/${today.getMonth() + 1}-${today.getDate()}-${today.getFullYear()}`
+            redirect: `/${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
         };
     }
 </script>
