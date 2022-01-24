@@ -1,11 +1,19 @@
+<script context="module">
+    export async function load({params}) {
+        return {
+            props: {date: new Date(params.date)}
+        }
+    }
+</script>
+
 <script>
     import Header from "$lib/Header.svelte";
     import Solar from "$lib/Solar.svelte";
     import Lunar from "$lib/Lunar.svelte";
     import DatePicker from "$lib/DatePicker.svelte";
-    import { page } from "$app/stores";
+    
     /**@type {Date}*/
-    let date = new Date($page.params.date);
+    export let date;
 </script>
 
 <svelte:head>
