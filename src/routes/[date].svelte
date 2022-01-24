@@ -1,7 +1,12 @@
 <script context="module">
     export async function load({params}) {
-        return {
-            props: {date: new Date(params.date)}
+        const date = new Date(params.date)
+        if (!isNaN(date.getTime())) return {
+            props: {date}
+        }
+        else return {
+            status: 302,
+            redirect: '/'
         }
     }
 </script>
