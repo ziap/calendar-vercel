@@ -1,10 +1,10 @@
 <script>
     /**@type {Date}*/
-    export let date;
-    import { Lunar } from "lunar-calendar-ts-vi";
+    export let date
+    import { Lunar } from 'lunar-calendar-ts-vi'
 
-    const lunar = new Lunar();
-    $: lunarDate = lunar.getBlockLunarDate(date);
+    const lunar = new Lunar()
+    $: lunarDate = lunar.getBlockLunarDate(date)
 </script>
 
 <footer class="lunar">
@@ -34,8 +34,7 @@
 <style>
     .lunar {
         background: #fff;
-        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-            0 3px 14px 2px rgba(0, 0, 0, 0.12),
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12),
             0 5px 5px -3px rgba(0, 0, 0, 0.2);
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

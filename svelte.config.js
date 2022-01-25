@@ -1,17 +1,17 @@
-import preprocess from "svelte-preprocess";
-import adapter from "@sveltejs/adapter-vercel";
+import preprocess from 'svelte-preprocess'
+import adapter from '@sveltejs/adapter-vercel'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter(),
-    prerender: { enabled: false },
+    kit: {
+        adapter: adapter(),
+        prerender: { enabled: false },
 
-    // hydrate the <div id="svelte"> element in src/app.html
-    target: "#svelte",
-  },
+        // hydrate the <div id="svelte"> element in src/app.html
+        target: '#svelte'
+    },
 
-  preprocess: [preprocess({})],
-};
+    preprocess: [preprocess({})]
+}
 
-export default config;
+export default config

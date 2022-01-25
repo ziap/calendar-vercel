@@ -1,18 +1,10 @@
 <script>
-    import Quote from "./Quote.svelte";
+    import Quote from './Quote.svelte'
 
     /**@type {Date}*/
-    export let date;
+    export let date
 
-    const dayOfWeek = [
-        "Chủ nhật",
-        "Thứ hai",
-        "Thứ ba",
-        "Thứ tư",
-        "Thứ năm",
-        "Thứ sáu",
-        "Thứ bảy",
-    ];
+    const dayOfWeek = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy']
 </script>
 
 <main>

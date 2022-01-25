@@ -4,6 +4,6 @@
         return {
             status: 302,
             redirect: `/${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
-        };
+        }
     }
 </script>

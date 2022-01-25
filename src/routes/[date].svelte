@@ -1,29 +1,31 @@
 <script context="module">
-    export async function load({params}) {
+    export async function load({ params }) {
         const date = new Date(params.date)
-        if (!isNaN(date.getTime())) return {
-            props: {date}
-        }
-        else return {
-            status: 302,
-            redirect: '/'
-        }
+        if (!isNaN(date.getTime()))
+            return {
+                props: { date }
+            }
+        else
+            return {
+                status: 302,
+                redirect: '/'
+            }
     }
 </script>
 
 <script>
-    import Header from "$lib/Header.svelte";
-    import Solar from "$lib/Solar.svelte";
-    import Lunar from "$lib/Lunar.svelte";
-    import DatePicker from "$lib/DatePicker.svelte";
-    
+    import Header from '$lib/Header.svelte'
+    import Solar from '$lib/Solar.svelte'
+    import Lunar from '$lib/Lunar.svelte'
+    import DatePicker from '$lib/DatePicker.svelte'
+
     /**@type {Date}*/
-    export let date;
+    export let date
 </script>
 
 <svelte:head>
     <title>
-        {date.toLocaleDateString("vi-VN", { dateStyle: "full" })} - Lịch vạn niên
+        {date.toLocaleDateString('vi-VN', { dateStyle: 'full' })} - Lịch vạn niên
     </title>
 </svelte:head>
 
@@ -47,7 +49,7 @@
     }
 
     .display {
-        background: url("/bg.jpg") center / cover;
+        background: url('/bg.jpg') center / cover;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

@@ -1,9 +1,9 @@
 <script>
-    import quotes from "$lib/json/quotes.json";
-    import getHoliday from "./holiday";
+    import quotes from '$lib/json/quotes.json'
+    import getHoliday from './holiday'
 
     /**@type {Date}*/
-    export let date;
+    export let date
 
     /**
      * 64-bit FNV-1a hashing algorithm - Randomize the order of the quotes
@@ -11,34 +11,19 @@
      * @returns {number} The hash value % the length of the quotes
      */
     function hash(x) {
-        x = BigInt(x);
-        let h = BigInt("14695981039346656037");
+        x = BigInt(x)
+        let h = BigInt('14695981039346656037')
         for (let i = BigInt(0); i < BigInt(64); i += BigInt(8)) {
-            h ^= (x >> i) & BigInt(0xff);
-            h *= BigInt("1099511628211");
-            h &= (BigInt(1) << BigInt(64)) - BigInt(1);
+            h ^= (x >> i) & BigInt(0xff)
+            h *= BigInt('1099511628211')
+            h &= (BigInt(1) << BigInt(64)) - BigInt(1)
         }
-        return (
-            Number(
-                (h & ((BigInt(1) << BigInt(32)) - BigInt(1))) ^
-                    (h >> BigInt(32))
-            ) % quotes.length
-        );
+        return Number((h & ((BigInt(1) << BigInt(32)) - BigInt(1))) ^ (h >> BigInt(32))) % quotes.length
     }
 
-    $: holiday = getHoliday(date);
+    $: holiday = getHoliday(date)
 
-    $: quote =
-        quotes[
-            hash(
-                ~~(
-                    (date.getTime() - date.getTimezoneOffset() * 60000) /
-                    1000 /
-                    3600 /
-                    24
-                )
-            )
-        ];
+    $: quote = quotes[hash(~~((date.getTime() - date.getTimezoneOffset() * 60000) / 1000 / 3600 / 24))]
 </script>
 
 <blockquote>
@@ -59,8 +44,7 @@
     blockquote {
         font-weight: 500;
         background-color: rgba(255, 255, 255, 0.6);
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-            0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(12px);
         border-left: 4px solid #0096bf;
         margin: 1rem 2rem;

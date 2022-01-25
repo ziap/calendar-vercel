@@ -7,10 +7,11 @@ A Vietnamese calendar desktop app powered by [WebView2](https://developer.micros
 ![Screenshot](screenshots.png)
 
 ## Requirements
- - Windows operating system
- - NET 6.0 [download](https://dotnet.microsoft.com/en-us/download)
- - NodeJS and NPM [download](https://nodejs.org/en/download/)
- - WebView2 [download](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
+
+-   Windows operating system
+-   NET 6.0 [download](https://dotnet.microsoft.com/en-us/download)
+-   NodeJS and NPM [download](https://nodejs.org/en/download/)
+-   WebView2 [download](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 
 ## Developing
 

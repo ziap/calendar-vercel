@@ -1,22 +1,19 @@
 <script>
-    import { Lunar } from "lunar-calendar-ts-vi";
-    import getHoliday from "./holiday";
+    import { Lunar } from 'lunar-calendar-ts-vi'
+    import getHoliday from './holiday'
 
     /**@type {Date}*/
-    export let date;
+    export let date
 
-    const oneDay = 24 * 3600 * 1000;
-    const lunar = new Lunar();
+    const oneDay = 24 * 3600 * 1000
+    const lunar = new Lunar()
 
-    $: month = date.getMonth();
-    $: firstDay = new Date(date.getFullYear(), month, 1);
-    $: firstDay.setDate(1 - firstDay.getDay());
+    $: month = date.getMonth()
+    $: firstDay = new Date(date.getFullYear(), month, 1)
+    $: firstDay.setDate(1 - firstDay.getDay())
 
-    $: dates = Array.from(
-        { length: 42 },
-        (_, i) => new Date(firstDay.getTime() + i * oneDay)
-    );
-    $: lunars = dates.map((x) => lunar.getBlockLunarDate(x));
+    $: dates = Array.from({ length: 42 }, (_, i) => new Date(firstDay.getTime() + i * oneDay))
+    $: lunars = dates.map(x => lunar.getBlockLunarDate(x))
 </script>
 
 <header>
@@ -34,10 +31,9 @@
             <a
                 class="date"
                 class:highlight={getHoliday(d)}
-                title={d.toLocaleString("vi-VN", { dateStyle: "full" })}
+                title={d.toLocaleString('vi-VN', { dateStyle: 'full' })}
                 class:active={d.getDate() == date.getDate()}
-                href={`/${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`}
-            >
+                href={`/${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`}>
                 <div class="solar">{d.getDate()}</div>
                 <div class="lunar">
                     {lunars[i].lunarDate}{#if lunars[i].lunarDate == 1}
@@ -50,12 +46,7 @@
         {/if}
     {/each}
     <footer>
-        <a
-            class="today-btn"
-            href="/"
-        >
-            Hôm nay
-        </a>
+        <a class="today-btn" href="/"> Hôm nay </a>
     </footer>
 </main>
 

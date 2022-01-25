@@ -1,8 +1,5 @@
 const config = {
-  plugins: [
-    require("postcss-normalize"),
-    require("autoprefixer")
-  ],
-};
+    plugins: [require('postcss-normalize'), require('autoprefixer')]
+}
 
-module.exports = config;
+module.exports = config
